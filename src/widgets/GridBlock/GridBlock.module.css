@@ -4,7 +4,7 @@
     gap: 20px;
 }
 
-.gridBlock__state {
+.gridBlockState {
     padding: 40px 20px;
     text-align: center;
     background: #ffffff;
@@ -14,7 +14,7 @@
     font-size: 18px;
 }
 
-.gridBlock__state_error {
+.gridBlockStateError {
     color: #b91c1c;
 }
 
@@ -37,7 +37,7 @@
         gap: 14px;
     }
 
-    .gridBlock__state {
+    .gridBlockState {
         padding: 28px 16px;
         font-size: 16px;
         border-radius: 16px;

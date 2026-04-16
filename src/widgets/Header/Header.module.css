@@ -12,7 +12,7 @@
     color: #ffffff;
 }
 
-.header__container {
+.headerContainer {
     box-sizing: border-box;
     width: 100%;
     max-width: 1280px;
@@ -23,34 +23,34 @@
     align-items: start;
 }
 
-.header__title {
+.headerTitle {
     margin: 0 0 8px;
     font-size: 32px;
     font-weight: 700;
 }
 
-.header__subtitle {
+.headerSubtitle {
     margin: 0;
     color: #d1d5db;
     font-size: 16px;
 }
 
 @media (max-width: 768px) {
-    .header__title {
+    .headerTitle {
         font-size: 28px;
     }
 }
 
 @media (max-width: 480px) {
-    .header__container {
+    .headerContainer {
         padding: 22px 12px;
     }
 
-    .header__title {
+    .headerTitle {
         font-size: 24px;
     }
 
-    .header__subtitle {
+    .headerSubtitle {
         font-size: 14px;
     }
 }

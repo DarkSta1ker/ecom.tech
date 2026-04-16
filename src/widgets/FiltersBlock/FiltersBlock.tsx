@@ -14,14 +14,14 @@ export const FiltersBlock: FC<FiltersBlockProps> = ({ value, onChange, total }) 
 
     return (
         <section className={styles.filtersBlock}>
-            <div className={styles.filtersBlock__content}>
-                <div className={styles.filtersBlock__info}>
-                    <h2 className={styles.filtersBlock__title}>Поиск товаров</h2>
-                    <p className={styles.filtersBlock__count}>Найдено: {total}</p>
+            <div className={styles.filtersBlockContent}>
+                <div className={styles.filtersBlockInfo}>
+                    <h2 className={styles.filtersBlockTitle}>Поиск товаров</h2>
+                    <p className={styles.filtersBlockCount}>Найдено: {total}</p>
                 </div>
 
                 <input
-                    className={styles.filtersBlock__input}
+                    className={styles.filtersBlockInput}
                     type="text"
                     placeholder="Введите название товара..."
                     value={value}

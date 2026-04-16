@@ -3,21 +3,21 @@
     background: #ffffff;
 }
 
-.footer__container {
+.footerContainer {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 18px 16px;
 }
 
-.footer__text {
+.footerText {
     margin: 0;
     color: #6b7280;
     font-size: 14px;
 }
 
 @media (max-width: 480px) {
-    .footer__container {
+    .footerContainer {
         padding: 16px 12px;
     }
 }

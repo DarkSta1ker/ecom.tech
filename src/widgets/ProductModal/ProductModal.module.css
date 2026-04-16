@@ -1,0 +1,156 @@
+.modalOverlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(17, 24, 39, 0.6);
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 920px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.modalClose {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f4f6;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.modalContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
+}
+
+.modalImageWrapper {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f3f4f6;
+    min-height: 320px;
+}
+
+.modalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modalCategory {
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    background: #eef2ff;
+    border-radius: 999px;
+    color: #4338ca;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.modalTitle {
+    margin: 0 0 14px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.modalDescription {
+    margin: 0 0 18px;
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.modalPrice {
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.modalBuyButton {
+    width: fit-content;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 22px;
+    background: #111827;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.modalBuyButton:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        grid-template-columns: 1fr;
+    }
+
+    .modalTitle {
+        font-size: 24px;
+    }
+
+    .modalPrice {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalOverlay {
+        padding: 12px;
+    }
+
+    .modal {
+        border-radius: 18px;
+    }
+
+    .modalContent {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .modalImageWrapper {
+        min-height: 220px;
+        border-radius: 14px;
+    }
+
+    .modalTitle {
+        font-size: 22px;
+    }
+
+    .modalDescription {
+        font-size: 15px;
+    }
+
+    .modalBuyButton {
+        width: 100%;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Product } from '../../shared/types/Product';
-import { ProductCard } from '../../shared/ProductCard';
+import { ProductCard } from '../ProductCard/ProductCard';
 import styles from './GridBlock.module.css';
 
 interface GridBlockProps {
@@ -17,15 +17,15 @@ export const GridBlock: FC<GridBlockProps> = ({
                                                   onCardClick,
                                               }) => {
     if (isLoading) {
-        return <div className={styles.gridBlock__state}>Загрузка товаров...</div>;
+        return <div className={styles.gridBlockState}>Загрузка товаров...</div>;
     }
 
     if (error) {
-        return <div className={`${styles.gridBlock__state} ${styles.gridBlock__state_error}`}>{error}</div>;
+        return <div className={`${styles.gridBlockState} ${styles.gridBlockStateError}`}>{error}</div>;
     }
 
     if (!products.length) {
-        return <div className={styles.gridBlock__state}>По вашему запросу ничего не найдено</div>;
+        return <div className={styles.gridBlockState}>По вашему запросу ничего не найдено</div>;
     }
 
     return (
