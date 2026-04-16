@@ -21,9 +21,12 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
         };
 
         document.addEventListener('keydown', handleEscClose);
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
 
         return () => {
             document.removeEventListener('keydown', handleEscClose);
+            document.body.style.overflow = previousOverflow;
         };
     }, [product, onClose]);
 
@@ -37,7 +40,7 @@ export const ProductModal: FC<ProductModalProps> = ({ product, onClose }) => {
                 className={styles.modal}
                 onClick={(event) => event.stopPropagation()}
             >
-                <button className={styles.modalClose} onClick={onClose} aria-label="Закрыть">
+                <button className={styles.modalClose} type={'button'} onClick={onClose} aria-label="Закрыть">
                     ×
                 </button>
 

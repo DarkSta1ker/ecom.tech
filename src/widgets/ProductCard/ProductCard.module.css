@@ -1,9 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .productCard {
     overflow: hidden;
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 20px;
     cursor: pointer;
+    margin:0;
+    padding:0;
     box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -17,16 +24,26 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     background: #f3f4f6;
+    margin:0;
+    padding:0;
 }
 
 .productCardImage {
+    display: block;
     width: 100%;
     height: 100%;
+    margin:0;
+    padding:0;
     object-fit: cover;
 }
 
 .productCardBody {
+    width: 100%;
+    height: 160px;
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .productCardCategory {
@@ -36,7 +53,7 @@
     background: #eef2ff;
     border-radius: 999px;
     color: #4338ca;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -63,10 +80,13 @@
     }
 
     .productCardTitle {
-        font-size: 17px;
+        font-size: 22px;
     }
 
     .productCardPrice {
+        font-size: 22px;
+    }
+    .productCardCategory {
         font-size: 18px;
     }
 }
