@@ -1,0 +1,26 @@
+.mainPage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainPage__content {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .mainPage__content {
+        padding: 20px 14px 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainPage__content {
+        padding: 16px 12px 24px;
+    }
+}
