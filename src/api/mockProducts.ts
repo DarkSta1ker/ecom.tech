@@ -1,0 +1,68 @@
+import { Product } from '../shared/types/Product';
+
+export const mockProducts: Product[] = [
+    {
+        id: 1,
+        title: 'Смарт-часы X100',
+        price: 7490,
+        category: 'Гаджеты',
+        image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=80',
+        description: 'Водонепроницаемые, GPS, 7-дневный аккумулятор',
+    },
+    {
+        id: 2,
+        title: 'Беспроводные наушники Air Beat',
+        price: 5990,
+        category: 'Аудио',
+        image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80',
+        description: 'Шумоподавление, 30 часов работы, удобная посадка',
+    },
+    {
+        id: 3,
+        title: 'Портативная колонка Boom Mini',
+        price: 4290,
+        category: 'Аудио',
+        image: 'https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=900&q=80',
+        description: 'Компактная Bluetooth-колонка с насыщенным звуком',
+    },
+    {
+        id: 4,
+        title: 'Электросамокат Urban Ride',
+        price: 28990,
+        category: 'Транспорт',
+        image: 'https://images.unsplash.com/photo-1529429617124-aee711a5ac1c?auto=format&fit=crop&w=900&q=80',
+        description: 'До 25 км на одном заряде, складная конструкция',
+    },
+    {
+        id: 5,
+        title: 'Ноутбук ProBook 14',
+        price: 64990,
+        category: 'Компьютеры',
+        image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80',
+        description: '14 дюймов, SSD 512 ГБ, 16 ГБ RAM, тонкий корпус',
+    },
+    {
+        id: 6,
+        title: 'Клавиатура Mech TKL',
+        price: 6990,
+        category: 'Компьютеры',
+        image: 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=900&q=80',
+        description: 'Механическая клавиатура без цифрового блока с RGB-подсветкой',
+    },
+    {
+        id: 7,
+        title: 'Фитнес-браслет Pulse Fit',
+        price: 3490,
+        category: 'Гаджеты',
+        image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=900&q=80',
+        description: 'Пульс, шагомер, мониторинг сна и уведомления',
+    },
+    {
+        id: 8,
+        title: 'Монитор Vision 27',
+        price: 18490,
+        category: 'Компьютеры',
+        image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=900&q=80',
+        description: '27 дюймов, IPS, 2K-разрешение, тонкие рамки',
+    },
+];
