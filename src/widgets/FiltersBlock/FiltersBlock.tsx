@@ -1,0 +1,33 @@
+import React, { FC, ChangeEvent } from 'react';
+import styles from './FiltersBlock.module.css';
+
+interface FiltersBlockProps {
+    value: string;
+    onChange: (value: string) => void;
+    total: number;
+}
+
+export const FiltersBlock: FC<FiltersBlockProps> = ({ value, onChange, total }) => {
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        onChange(event.target.value);
+    };
+
+    return (
+        <section className={styles.filtersBlock}>
+            <div className={styles.filtersBlock__content}>
+                <div className={styles.filtersBlock__info}>
+                    <h2 className={styles.filtersBlock__title}>Поиск товаров</h2>
+                    <p className={styles.filtersBlock__count}>Найдено: {total}</p>
+                </div>
+
+                <input
+                    className={styles.filtersBlock__input}
+                    type="text"
+                    placeholder="Введите название товара..."
+                    value={value}
+                    onChange={handleChange}
+                />
+            </div>
+        </section>
+    );
+};
