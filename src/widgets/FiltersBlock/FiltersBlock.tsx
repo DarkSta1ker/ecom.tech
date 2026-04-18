@@ -13,7 +13,6 @@ export const FiltersBlock: FC<FiltersBlockProps> = ({ value, onChange, total }) 
     const debouncedChange = useCallback(
         debounce<string>(
             (newValue: string)=>{
-                console.log('debounce', newValue);
                 onChange(newValue);
                 }
             , 300)
