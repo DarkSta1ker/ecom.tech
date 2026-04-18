@@ -6,7 +6,7 @@ import { Footer } from '../widgets/Footer/Footer';
 import { ProductModal } from '../widgets/ProductModal/ProductModal';
 import styles from './MainPage.module.css';
 import Pagination from '@mui/material/Pagination';
-import {useSearch} from "../hooks/useSearch";
+import { useSearch } from '../hooks/useSearch';
 
 export const MainPage: FC = () => {
     const {
@@ -20,18 +20,26 @@ export const MainPage: FC = () => {
         products,
         isLoading,
         error,
-        handleChangePage
+        handleChangePage,
+        minPrice,
+        maxPrice,
+        selectedCategories,
+        handleMinPriceChange,
+        handleMaxPriceChange,
+        handleCategoriesChange,
+        categories,
+        handleResetFilters
     } = useSearch();
 
     return (
         <div className={styles.mainPage}>
-            {
-                selectedProduct  &&
+            {selectedProduct && (
                 <ProductModal
                     product={selectedProduct}
                     onClose={() => setSelectedProduct(null)}
                 />
-            }
+            )}
+
             <Header />
 
             <div className={styles.mainPageContent}>
@@ -39,6 +47,14 @@ export const MainPage: FC = () => {
                     value={searchValue}
                     onChange={handleChangeSearch}
                     total={totalProducts}
+                    minPrice={minPrice}
+                    maxPrice={maxPrice}
+                    onMinPriceChange={handleMinPriceChange}
+                    onMaxPriceChange={handleMaxPriceChange}
+                    selectedCategories={selectedCategories}
+                    onCategoriesChange={handleCategoriesChange}
+                    categories={categories}
+                    onResetFilters={handleResetFilters}
                 />
 
                 <GridBlock
@@ -52,7 +68,7 @@ export const MainPage: FC = () => {
                     count={totalPagesNumber}
                     page={selectedPage}
                     onChange={handleChangePage}
-                    size={"large"}
+                    size="large"
                 />
             </div>
 

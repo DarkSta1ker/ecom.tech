@@ -1,68 +1,249 @@
 .filtersBlock {
-    margin-bottom: 24px;
+    width: 100%;
+    padding: 20px 24px;
+    border-radius: 24px;
+    background: #f5f5f5;
 }
 
 .filtersBlockContent {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .filtersBlockInfo {
-    min-width: 180px;
+    min-width: 150px;
 }
 
 .filtersBlockTitle {
-    margin: 0 0 6px;
+    margin: 0;
     font-size: 20px;
+    font-weight: 700;
+    color: #111827;
 }
 
 .filtersBlockCount {
-    margin: 0;
-    color: #6b7280;
-    font-size: 14px;
+    margin: 8px 0 0;
+    color: #666;
+}
+
+.filtersBlockControls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .filtersBlockInput {
     width: 100%;
     max-width: 420px;
-    padding: 14px 16px;
+    height: 48px;
+    padding: 0 16px;
+
     border: 1px solid #d1d5db;
     border-radius: 14px;
-    outline: none;
+
+    background: #ffffff;
+    color: #111827;
+
     font-size: 15px;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+
+    outline: none;
+
+    transition: all 0.2s ease;
 }
+
+.filtersBlockInput::placeholder {
+    color: #9ca3af;
+}
+
+.filtersBlockInput:hover {
+    border-color: #9ca3af;
+}
+
 
 .filtersBlockInput:focus {
     border-color: #111827;
-    box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.08);
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+.filtersButton {
+    min-width: 140px !important;
+    height: 48px !important;
+    border-radius: 16px !important;
+    text-transform: none !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    background: #111827 !important;
+    box-shadow: 0 10px 24px rgba(17, 24, 39, 0.18) !important;
+    border: 1px solid #111827 !important;
 }
 
-@media (max-width: 768px) {
-    .filtersBlockContent {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .filtersBlockInput {
-        max-width: 100%;
-    }
+.filtersButton:hover {
+    background: #000000 !important;
+    box-shadow: 0 14px 28px rgba(17, 24, 39, 0.24) !important;
 }
+
+.filtersPopoverPaper {
+    margin-top: 10px;
+    border-radius: 24px !important;
+    overflow: hidden;
+    background: #ffffff !important;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16) !important;
+    border: 2px solid #111827 !important;
+}
+
+.filtersPopover {
+    width: 340px;
+    padding: 20px;
+    color: #111827;
+    background: #ffffff;
+}
+
+.filtersPopoverHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.filtersPopoverTitle {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.filtersPopoverSubtitle {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.filtersPopoverFields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.whiteField :global(.MuiInputLabel-root) {
+    color: #374151 !important;
+}
+
+.whiteField :global(.MuiInputLabel-root.Mui-focused) {
+    color: #111827 !important;
+}
+
+.whiteField :global(.MuiOutlinedInput-root) {
+    color: #111827 !important;
+    border-radius: 14px !important;
+    background: #ffffff !important;
+}
+
+.whiteField :global(.MuiOutlinedInput-notchedOutline) {
+    border-color: #111827 !important;
+}
+
+.whiteField :global(.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline) {
+    border-color: #111827 !important;
+}
+
+.whiteField :global(.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline) {
+    border-color: #111827 !important;
+    border-width: 1px !important;
+}
+
+.whiteField :global(.MuiSvgIcon-root) {
+    color: #111827 !important;
+}
+
+.whiteField :global(input) {
+    color: #111827 !important;
+}
+
+.whiteField :global(.MuiSelect-select) {
+    color: #111827 !important;
+    background: #ffffff !important;
+}
+
+.whiteField :global(.MuiCheckbox-root) {
+    color: #111827 !important;
+}
+
+.whiteField :global(.MuiCheckbox-root.Mui-checked) {
+    color: #111827 !important;
+}
+
+.filtersPopoverActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.resetButton {
+    color: #111827 !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    border-radius: 12px !important;
+}
+
+.resetButton:hover {
+    background: #f3f4f6 !important;
+}
+
+.doneButton {
+    text-transform: none !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
+    padding: 8px 18px !important;
+    color: #ffffff !important;
+    background: #111827 !important;
+    box-shadow: none !important;
+}
+
+.doneButton:hover {
+    background: #000000 !important;
+    box-shadow: none !important;
+}
+
+.selectMenuPaper {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 2px solid #111827 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12) !important;
+    margin-top: 6px;
+}
+
+.selectMenuItem {
+    color: #111827 !important;
+    background: #ffffff !important;
+}
+
+.selectMenuItem:hover {
+    background: #f3f4f6 !important;
+}
+
+.selectMenuItem :global(.MuiListItemText-primary) {
+    color: #111827 !important;
+}
+
+.selectCheckbox {
+    color: #111827 !important;
+}
+
+.selectCheckbox.Mui-checked {
+    color: #111827 !important;
+}
+
+
 
 @media (max-width: 480px) {
     .filtersBlockContent {
-        padding: 16px;
-        border-radius: 16px;
-    }
-
-    .filtersBlockTitle {
-        font-size: 18px;
+        flex-direction: column;
     }
 }

@@ -16,37 +16,40 @@ export const getProducts = async (
     maxCost?: number,
     minCost?: number,
 ): Promise<GetProductsResult> => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
-            const normalizedSearch = searchValue?.trim().toLowerCase() || null;
-            const marks = markers?.length || 0
+            const normalizedSearch = searchValue?.trim().toLowerCase() || '';
             const start = (page - 1) * perPage;
             const end = start + perPage;
-            let products = mockProducts
+
+            let products = [...mockProducts];
+
             if (normalizedSearch) {
                 products = products.filter((product) =>
                     product.title.toLowerCase().includes(normalizedSearch)
                 );
             }
-            if (markers && marks>0){
+
+            if (markers && markers.length > 0) {
                 products = products.filter((product) =>
-                    product.category in markers
-                )
+                    markers.includes(product.category)
+                );
             }
-            if (maxCost) {
-                products = products.filter((product) =>
-                product.price<=maxCost)
+
+            if (typeof maxCost === 'number' && !Number.isNaN(maxCost)) {
+                products = products.filter((product) => product.price <= maxCost);
             }
-            if (minCost) {
-                products = products.filter((product) =>
-                product.price>=minCost)
+
+            if (typeof minCost === 'number' && !Number.isNaN(minCost)) {
+                products = products.filter((product) => product.price >= minCost);
             }
-            const productsNumber = products.length
-            const totalPages = Math.ceil(products.length / perPage);
-            products = products.slice(start, end);
+
+            const productsNumber = products.length;
+            const totalPages = Math.ceil(products.length / perPage) || 1;
+            const paginatedProducts = products.slice(start, end);
 
             resolve({
-                products,
+                products: paginatedProducts,
                 page,
                 totalPages,
                 productsNumber,
