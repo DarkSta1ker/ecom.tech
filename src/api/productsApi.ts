@@ -12,6 +12,8 @@ export const getProducts = async (
     perPage: number = 10,
     searchValue?: string,
     markers?: string[],
+    maxCost?: number,
+    minCost?: number,
 ): Promise<GetProductsResult> => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -30,6 +32,14 @@ export const getProducts = async (
                 products.filter((product) =>
                     product.category in markers
                 )
+            }
+            if (maxCost) {
+                products.filter((product) =>
+                product.price<=maxCost)
+            }
+            if (minCost) {
+                products.filter((product) =>
+                product.price>=minCost)
             }
             resolve({
                 products,
