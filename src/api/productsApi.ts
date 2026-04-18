@@ -5,46 +5,51 @@ interface GetProductsResult {
     products: Product[];
     page: number;
     totalPages: number;
+    productsNumber: number;
 }
 
 export const getProducts = async (
-    page: number = 1,
-    perPage: number = 10,
+    page: number,
+    perPage: number,
     searchValue?: string,
     markers?: string[],
     maxCost?: number,
     minCost?: number,
 ): Promise<GetProductsResult> => {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             const normalizedSearch = searchValue?.trim().toLowerCase() || null;
             const marks = markers?.length || 0
-            const totalPages = Math.ceil(mockProducts.length / perPage);
             const start = (page - 1) * perPage;
             const end = start + perPage;
-            const products = mockProducts.slice(start, end);
+            let products = mockProducts
             if (normalizedSearch) {
-                products.filter((product) =>
+                products = products.filter((product) =>
                     product.title.toLowerCase().includes(normalizedSearch)
                 );
             }
             if (markers && marks>0){
-                products.filter((product) =>
+                products = products.filter((product) =>
                     product.category in markers
                 )
             }
             if (maxCost) {
-                products.filter((product) =>
+                products = products.filter((product) =>
                 product.price<=maxCost)
             }
             if (minCost) {
-                products.filter((product) =>
+                products = products.filter((product) =>
                 product.price>=minCost)
             }
+            const productsNumber = products.length
+            const totalPages = Math.ceil(products.length / perPage);
+            products = products.slice(start, end);
+
             resolve({
                 products,
                 page,
                 totalPages,
+                productsNumber,
             });
         }, 600);
     });

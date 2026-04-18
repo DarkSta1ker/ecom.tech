@@ -1,48 +1,27 @@
-import React, { FC, useEffect, useMemo, useState } from 'react';
+import React, { FC } from 'react';
 import { FiltersBlock } from '../widgets/FiltersBlock/FiltersBlock';
 import { GridBlock } from '../widgets/GridBlock/GridBlock';
 import { Header } from '../widgets/Header/Header';
 import { Footer } from '../widgets/Footer/Footer';
 import { ProductModal } from '../widgets/ProductModal/ProductModal';
-import { getProducts } from '../api/productsApi';
-import { Product } from '../shared/types/Product';
 import styles from './MainPage.module.css';
+import Pagination from '@mui/material/Pagination';
+import {useSearch} from "../hooks/useSearch";
 
 export const MainPage: FC = () => {
-    const [products, setProducts] = useState<Product[]>([]);
-    const [searchValue, setSearchValue] = useState('');
-    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState('');
-
-    useEffect(() => {
-        const loadProducts = async () => {
-            try {
-                setIsLoading(true);
-                const data = await getProducts();
-                setProducts(data);
-            } catch (e) {
-                setError('Не удалось загрузить товары');
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        loadProducts();
-    }, []);
-
-    const filteredProducts = useMemo(() => {
-        const normalizedSearch = searchValue.trim().toLowerCase();
-
-        if (!normalizedSearch) {
-            return products;
-        }
-
-        return products.filter((product) =>
-            product.title.toLowerCase().includes(normalizedSearch)
-        );
-    }, [products, searchValue]);
-
+    const {
+        selectedPage,
+        selectedProduct,
+        setSelectedProduct,
+        searchValue,
+        handleChangeSearch,
+        totalProducts,
+        totalPagesNumber,
+        products,
+        isLoading,
+        error,
+        handleChangePage
+    } = useSearch();
 
     return (
         <div className={styles.mainPage}>
@@ -55,20 +34,27 @@ export const MainPage: FC = () => {
             }
             <Header />
 
-            <main className={styles.mainPage__content}>
+            <div className={styles.mainPageContent}>
                 <FiltersBlock
                     value={searchValue}
-                    onChange={setSearchValue}
-                    total={filteredProducts.length}
+                    onChange={handleChangeSearch}
+                    total={totalProducts}
                 />
 
                 <GridBlock
-                    products={filteredProducts}
+                    products={products}
                     isLoading={isLoading}
                     error={error}
                     onCardClick={setSelectedProduct}
                 />
-            </main>
+
+                <Pagination
+                    count={totalPagesNumber}
+                    page={selectedPage}
+                    onChange={handleChangePage}
+                    size={"large"}
+                />
+            </div>
 
             <Footer />
         </div>
