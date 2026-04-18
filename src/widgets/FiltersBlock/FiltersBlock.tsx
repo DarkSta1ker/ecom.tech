@@ -1,6 +1,6 @@
-import React, { FC, ChangeEvent } from 'react';
+import React, {FC, ChangeEvent, useState, useCallback} from 'react';
 import styles from './FiltersBlock.module.css';
-
+import {debounce} from "../../shared/utils/debounce";
 interface FiltersBlockProps {
     value: string;
     onChange: (value: string) => void;
@@ -8,9 +8,21 @@ interface FiltersBlockProps {
 }
 
 export const FiltersBlock: FC<FiltersBlockProps> = ({ value, onChange, total }) => {
+    const [inpVal, setInpVal] = useState(value|| '');
+
+    const debouncedChange = useCallback(
+        debounce<string>(
+            (newValue: string)=>{
+                console.log('debounce', newValue);
+                onChange(newValue);
+                }
+            , 300)
+        ,[onChange])
+
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        onChange(event.target.value);
-    };
+        setInpVal(event.target.value);
+        debouncedChange(event.target.value);
+    }
 
     return (
         <section className={styles.filtersBlock}>
@@ -24,7 +36,7 @@ export const FiltersBlock: FC<FiltersBlockProps> = ({ value, onChange, total }) 
                     className={styles.filtersBlockInput}
                     type="text"
                     placeholder="Введите название товара..."
-                    value={value}
+                    value={inpVal}
                     onChange={handleChange}
                 />
             </div>
