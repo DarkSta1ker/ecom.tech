@@ -6,7 +6,7 @@ export const mockProducts: Product[] = [
         title: 'Смарт-часы X100',
         price: 7490,
         category: 'Гаджеты',
-        image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=80',
+        image: 'https://yandex-images.clstorage.net/9Iv6aM431/b1361aowae/wAPc6fEztgkeG8Vs1mWl8tZ_u2ESUpcxDAEGx8oskZcvPecy-q6-IVRyiuDyMtjzHl9KP6zG2l_yuNhj8LsczoZXzqW2dq1cQ17aON5moPDLIvhwDgiTbBZDWsmJL8nJfT2IWYjWzB0vRfeV2kWS8RVYSXKx0cs2la30MbHFXo_5OuXe6TTMHBsYv1j1Y6P95TePbAAQm34IInHXs1XhjB9cv26G7_cqKk_dh8dbhMgZbH5HzsjbHrvI6wKMx16U7zD_ztYa4igPIb92wEqg-vY-tEIKGY9aDj1P1Z9e4qwIX79QuPvsFgJy0IXlQ5r-D39uetrE6S-b3-A_je1Nk_kq-_z7C_EnFDyIXeFgm_r7O49-AQu7bAMKTfewbcqdGlyEV7347xMHUcm-60OA9A1GRkTQ2_gimMf4Naz9WZbvK_zn1Rf9ISAwunPASKrCwhKyRgMOjH0KDW33r1LLlidEo2ib_MwFJ2LHvMNSnt4hbXh_3c3fCo_31yq-2Wy9_hvP5uQS0RMrJbF5x0C07egwvXAzFZNCPC16_Kt_978pa7VTgv37NxZa_6fiSbj4PHNubtPwygiNyvo6lM9zptok_tvoJ9odMCyNYsZHkvrpPZRQCAqufQgLeNG8RsiYOWKzbaLvyCkYYceg1Hi_yT5RSV_05NwEkMv4Ea_iebD8EMzk9jDeJQsvjnDAaLf-3zi0ST4Wj0MBM179lFXLsCVXkX-k0cYlJGDViOdqodUWWklszPLsJoXC7Ae99ker2BXk6vEy8wwvCph32ESV0c8hmWgwBbBgDjNC7LJD8ZclTJJjivDNGidC0ZrRRq74PU5hYPn5yRGg28o6l-Rgq8A1_sDgJsICKzC_Tf9Cou7kA6J3BBGRQhUubOmUbuqkKHq9Sp3g7w4Mb8u-3Vih-hpyVX7W6f0hrcDPB4L5aLDzI-rpyi_cAB4BhF78X5HH6x2fbQEPqUUzK0nqtVo',
         description: 'Водонепроницаемые, GPS, 7-дневный аккумулятор',
     },
     {
@@ -14,7 +14,7 @@ export const mockProducts: Product[] = [
         title: 'Беспроводные наушники Air Beat',
         price: 5990,
         category: 'Аудио',
-        image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=3a517755edf78ce2fc3f8d4863f528170da1bff3-9220156-images-thumbs&n=13',
         description: 'Шумоподавление, 30 часов работы, удобная посадка',
     },
     {
@@ -22,7 +22,7 @@ export const mockProducts: Product[] = [
         title: 'Портативная колонка Boom Mini',
         price: 4290,
         category: 'Аудио',
-        image: 'https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=7405cf5fd8afa96bca1db149bd2c9c021679d2d6-12522553-images-thumbs&n=13',
         description: 'Компактная Bluetooth-колонка с насыщенным звуком',
     },
     {
@@ -30,7 +30,7 @@ export const mockProducts: Product[] = [
         title: 'Электросамокат Urban Ride',
         price: 28990,
         category: 'Транспорт',
-        image: 'https://images.unsplash.com/photo-1529429617124-aee711a5ac1c?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=a3d79af0119e5c01d8a2a95157af0001f50ff3c7-8184004-images-thumbs&n=13',
         description: 'До 25 км на одном заряде, складная конструкция',
     },
     {
@@ -38,7 +38,7 @@ export const mockProducts: Product[] = [
         title: 'Ноутбук ProBook 14',
         price: 64990,
         category: 'Компьютеры',
-        image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=cabe2e08f1521ebe204d5a7c6435abb69656edc6-10715741-images-thumbs&n=13',
         description: '14 дюймов, SSD 512 ГБ, 16 ГБ RAM, тонкий корпус',
     },
     {
@@ -46,7 +46,7 @@ export const mockProducts: Product[] = [
         title: 'Клавиатура Mech TKL',
         price: 6990,
         category: 'Компьютеры',
-        image: 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=135ca34f0cc3f2501721dbe035b00a59f9ff252e-9066167-images-thumbs&n=13',
         description: 'Механическая клавиатура без цифрового блока с RGB-подсветкой',
     },
     {
@@ -54,7 +54,7 @@ export const mockProducts: Product[] = [
         title: 'Фитнес-браслет Pulse Fit',
         price: 3490,
         category: 'Гаджеты',
-        image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=8653e8c4d88c6d819bcd058f0ede628c2f73f8e3-5876837-images-thumbs&n=13',
         description: 'Пульс, шагомер, мониторинг сна и уведомления',
     },
     {
@@ -62,7 +62,7 @@ export const mockProducts: Product[] = [
         title: 'Монитор Vision 27',
         price: 18490,
         category: 'Компьютеры',
-        image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=900&q=80',
+        image: 'https://avatars.mds.yandex.net/i?id=f0140e84fe4f485655510428dd1a80762d48b3bd-5371416-images-thumbs&n=13',
         description: '27 дюймов, IPS, 2K-разрешение, тонкие рамки',
     },
     {
